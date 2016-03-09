@@ -3,27 +3,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <script type="text/javascript" src="kango-ui/kango_api.js"></script>
-    <script type="text/javascript" src="jquery-min.js"></script>
     <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <h1> My Reader </h1>
-
-    <fieldset class="login-inputs-mr">
-        <legend>Login</legend>
-        <label>Email</label>
-        <input id="xhr-uid" class="login-inputs-mr" type="text" value="" size="64"/>
-        <label>Password</label>
-        <input id="xhr-upwd" class="login-inputs-mr" type="password" value="" size="64"/>
-        <input id="xhr-get-login" class="login-inputs-mr" type="submit" value="Login"/><br/>
-    </fieldset>
-
-    <fieldset>
-        <legend>Add Article</legend>
-        <label>Url to Add</label>
-        <input id="xhr-url" type="text" value="http://google.com" size="64"/>
-        <input id="xhr-get-add-article" class="" type="submit" value="Add article"/><br/>
-        <label id="success-label-mr" style="display:none">Success!</label>
-    </fieldset>
+    <blockquote>
+        <fieldset class="login-inputs-mr">
+            <legend>Login</legend>
+            <label>Email</label>
+            <input id="xhr-uid" class="form-control login-inputs-mr" type="text" autofocus value="" size="64" />
+            <label>Password</label>
+            <input id="xhr-upwd" class="form-control login-inputs-mr" type="password" value="" size="64"/>
+            <br/>
+            <input id="xhr-get-login" class="login-inputs-mr btn btn-success" type="submit" value="Login"/><br/>
+        </fieldset>
+    </blockquote>
+    <hr/>
+    <blockquote>
+        <fieldset>
+            <label>Add URL</label>
+            <input id="xhr-url" type="text" value="http://google.com" size="64"/>
+            <input id="xhr-get-add-article" class="btn btn-success" type="submit" value="Add article"/><br/>
+            <label id="success-label-mr" style="display:none" autofocus>Success!</label>
+        </fieldset>
+    </blockquote>
+  
 </body>
 </html>
