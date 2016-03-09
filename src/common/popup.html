@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <script type="text/javascript" src="kango-ui/kango_api.js"></script>
+    <script type="text/javascript" src="jquery-min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+</head>
+<body>
+    <h1> My Reader </h1>
+
+    <fieldset class="login-inputs-mr">
+        <legend>Login</legend>
+        <label>Email</label>
+        <input id="xhr-uid" class="login-inputs-mr" type="text" value="" size="64"/>
+        <label>Password</label>
+        <input id="xhr-upwd" class="login-inputs-mr" type="password" value="" size="64"/>
+        <input id="xhr-get-login" class="login-inputs-mr" type="submit" value="Login"/><br/>
+    </fieldset>
+
+    <fieldset>
+        <legend>Add Article</legend>
+        <label>Url to Add</label>
+        <input id="xhr-url" type="text" value="http://google.com" size="64"/>
+        <input id="xhr-get-add-article" class="" type="submit" value="Add article"/><br/>
+        <label id="success-label-mr" style="display:none">Success!</label>
+    </fieldset>
+</body>
+</html>

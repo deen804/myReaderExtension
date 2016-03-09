@@ -1,0 +1,23 @@
+<?xml version="1.0" ?><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>{17E46067-216B-4561-805C-357C3C473E23}</em:id>
+        <em:name>my-reader</em:name>
+        <em:version>0.9.0</em:version>
+        <em:targetApplication>
+            <Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>38.0</em:minVersion>
+                <em:maxVersion>45.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+        <em:bootstrap>true</em:bootstrap>
+        <em:description>Extension description</em:description>
+        <em:creator>DarkPrince</em:creator>
+        <em:homepageURL>http://my-reader.com/</em:homepageURL>
+        <em:iconURL>chrome://kango-17e46067-216b-4561-805c-357c3c473e23/content/icons/icon32.png</em:iconURL>
+        
+        
+        
+        <em:type>2</em:type>
+    </Description>
+</RDF>

@@ -1,0 +1,29 @@
+{
+    "content_scripts": [
+        "content.js"
+    ], 
+    "description": "Extension description", 
+    "creator": "DarkPrince", 
+    "framework_version": "1.8.0 3dc957b83b36", 
+    "background_scripts": [
+        "jquery-min.js", 
+        "main.js", 
+        "background.js", 
+        "popup.js"
+    ], 
+    "homepage_url": "http://my-reader.com/", 
+    "version": "0.9.0", 
+    "framework_package_id": "dev", 
+    "browser_button": {
+        "caption": "My Reader", 
+        "tooltipText": "My Reader", 
+        "popup": {
+            "url": "popup.html", 
+            "width": 600, 
+            "height": 596
+        }, 
+        "icon": "icons/reader.png"
+    }, 
+    "id": "{D4A9BCFA-6CFF-437D-89DE-7673CC44B57C}", 
+    "name": "my-reader"
+}
