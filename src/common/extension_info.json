@@ -22,6 +22,9 @@
             "height": 596
         }
     },
+    "context_menu_item": {
+        "caption": "Add to MyReader"
+    },
     "name": "my-reader",
     "permissions": {
         "tabs": true,
