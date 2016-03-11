@@ -20,7 +20,7 @@ function handleContextMenuClickMr() {
     }
 
     kango.addMessageListener('ContextMenuItemClick', function(event) {
-        alert(clickedElement);
+        //alert(clickedElement);
         kango.console.log(clickedElement);
         var this_url = clickedElement.getAttribute('href');
         kango.console.log(this_url);
@@ -29,14 +29,18 @@ function handleContextMenuClickMr() {
 }
 
 function postPageInfoMessage(this_url) {
+    if(typeof this_url == 'undefined' || !this_url || (this_url.indexOf("http:") !== 0)){
+        return false;
+    }
     var pageInfo = {
         right_click_url: this_url
     };
 
     kango.console.log('Sending page info...');
+    kango.console.log(pageInfo);
 
     // dispatch messsage to background script
-    kango.dispatchMessage('PageInfo', pageInfo);
+    kango.dispatchMessage('RightClickURlMr', pageInfo);
 }
 
 

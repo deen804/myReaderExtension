@@ -38,7 +38,13 @@ var ApiCall = {
         });
     },
 
-    addArticle: function() {
+    addArticle: function(right_click_url) {
+        if (!right_click_url) {
+            url = $('#xhr-url').val();
+        } else {
+            url = right_click_url;
+        }
+
         var details = {
             url: addArticleUrl,
             method: 'POST',
@@ -48,9 +54,13 @@ var ApiCall = {
                 authorization: kango.storage.getItem('my_reader_token'),
             },
             params: {
-                url: $('#xhr-url').val(),
+                url: url,
             }
         };
+
+        kango.console.log('adding articel');
+        kango.console.log(details);
+
         kango.xhr.send(details, function(data) {
             $('#xhr-result').val((data.status == 200 && data.response !== null) ? data.response : 'Error. Status=' + data.status);
             if (typeof data != 'undefined' && data.status == 200 && data.response !== null) {
@@ -107,6 +117,23 @@ var WindowTest = {
     },
 };
 
+var messageListenerMr = {
+    init: function() {
+        kango.console.log('am registering listener');
+        kango.addMessageListener('RightClickURlMr', function(event) {
+            // is message from active tab?
+            kango.console.log('event');
+            if (event.target.isActive()) {
+                kango.console.log(event.data);
+                if (event.data !== undefined && event.data.right_click_url !== undefined && event.data.right_click_url) {
+                    kango.console.log(event.data.right_click_url);
+                    ApiCall.addArticle(event.data.right_click_url);
+                }
+            }
+        });
+    }
+};
+
 KangoAPI.onReady(function() {
     console.log('OK');
 
@@ -144,22 +171,14 @@ KangoAPI.onReady(function() {
 
     kango.ui.contextMenuItem.addEventListener(kango.ui.contextMenuItem.event.CLICK, function() {
         kango.console.log('Context menu item click');
-        ApiCall.addArticle();
         kango.browser.tabs.getCurrent(function(tab) {
             tab.dispatchMessage('ContextMenuItemClick');
         });
     });
 
-    kango.addMessageListener('PageInfo', function(event) {
-        // is message from active tab?
-
-        kango.console.log(event.data);
-        if (event.target.isActive()) {
-            kango.console.log(event.data);
-        }
-    });
-
     checkIfLoggedIn.init();
     loadUrlToTextBox.init();
     ApiCall.init();
+    
 });
+messageListenerMr.init();
